@@ -1,0 +1,18 @@
+version: '3'
+services:
+    nginx:
+        image: nginx:1.12
+        container_name: ps2alerts-maps
+        ports:
+            - "80"
+        volumes:
+            - ./conf.d:/etc/nginx/conf.d
+            - ./:/var/www/html/ps2alerts.com/maps
+            - /var/config/docker/nginx/certs:/etc/nginx/certs
+        environment:
+            - VIRTUAL_HOST=maps.ps2alerts.com
+        restart: always
+networks:
+    default:
+        external:
+            name: local
