@@ -10,8 +10,7 @@ services:
             - ./:/var/www/html/ps2alerts.com/maps
             - /var/config/docker/nginx/certs:/etc/nginx/certs
         environment:
-            - VIRTUAL_HOST=maps.ps2alerts.com
-        restart: always
+            - VIRTUAL_HOST=dev.maps.ps2alerts.com
 networks:
     default:
         external:
